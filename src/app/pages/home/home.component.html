@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="posts">
+        <div class="post" *ngFor="let post of posts">
+            <div class="image-wrapper">
+                <img src="assets/images/{{post.photo}}" alt="">
+            </div>
+            <div class="post-info">
+                <div class="post-header">
+                    <h3 class="title">{{post.title}}</h3>
+                    <h3 class="comment"><img src="assets/images/comment.svg" alt=""> Comments</h3>
+                </div>
+                <div class="post-body">
+                    <div class="text">
+                        <p>{{post.text}}</p>
+                    </div>
+                    <div class="comments">
+                        <div class="comment" *ngFor="let comment of getCommentsForPost(post.id)">
+                            <div class="icon">
+                                <img src="assets/images/{{comment.photo}}" alt="">
+                            </div>
+                            <div class="comment-info">
+                                <p class="name">{{comment.username}}</p>
+                                <p class="message">
+                                    {{comment.body}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="button-wrapper">
+                            <button [routerLink]="['/post', post.id]">View post</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

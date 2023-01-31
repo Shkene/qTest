@@ -1,0 +1,27 @@
+<div class="nav">
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="menu">
+                <div class="logo-wrapper" [routerLink]="['/home']">
+                    <span>q</span>Test
+                </div>
+                <div class="menu-nav">
+                    <ul>
+                        <li><a [routerLink]="['/home']" routerLinkActive="active-link">Posts</a></li>
+                    </ul>
+                    <div class="cleaner"></div>
+                </div>
+                <div id="menuToggle">
+                    <input type="checkbox" #mobCheck />
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <ul id="menu">
+                        <li><a [routerLink]="['/home']" (click)="closeMenu()" routerLinkActive="active-link">Posts</a></li>
+                    </ul>
+                </div>
+                <div class="cleaner"></div>
+            </div>
+        </div>
+    </div>
+</div>

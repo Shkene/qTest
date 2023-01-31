@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="post" *ngIf="post">
+        <div class="hero-image"></div>
+        <div class="post-info">
+            <h2>{{post.title}}</h2>
+            <p>{{post.text}}</p>
+            <div class="comments">
+                <h4><img src="assets/images/comment.svg" alt=""> Comments</h4>
+                <div class="comment" *ngFor="let comment of getCommentsForPost(post.id)">
+                    <div class="icon">
+                        <img src="assets/images/{{comment.photo}}" alt="">
+                    </div>
+                    <div class="comment-info">
+                        <p class="name">{{comment.username}}</p>
+                        <p class="message">
+                            {{comment.body}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
